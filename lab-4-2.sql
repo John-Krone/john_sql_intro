@@ -24,4 +24,8 @@
 -- | Billy      | Hamilton  |
 -- | Ian        | Happ      |
 
-
+Select players.first_name, players.last_name
+FROM stats 
+INNER JOIN teams on teams.id = stats.team_id
+INNER JOIN players on players.id = stats.player_id
+WHERE teams.name = "Chicago Cubs" AND teams.year = "2020"
